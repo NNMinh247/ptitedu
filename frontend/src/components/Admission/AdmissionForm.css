@@ -1,0 +1,88 @@
+.admission-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.admission-title {
+  text-align: center;
+  color: #c90000;
+  margin-bottom: 10px;
+}
+
+.admission-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"], input[type="date"], select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.file-upload-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+}
+
+.file-instruction {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.file-instruction ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #c90000;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #a00000;
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

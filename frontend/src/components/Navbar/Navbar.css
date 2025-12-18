@@ -1,0 +1,87 @@
+/* Thanh Navbar */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  background: transparent; /* Ban đầu trong suốt */
+}
+
+/* Khi cuộn xuống: Nền trắng, Viền đỏ */
+.custom-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98); /* Trắng đục */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #c90000; /* Viền đỏ PTIT */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo PTIT */
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #c90000; /* Đỏ */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.nav-logo i {
+  color: #333; /* Icon mũ màu đen */
+}
+
+/* Menu Links */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700; /* Chữ đậm */
+  color: #444; /* Màu chữ mặc định là xám đen */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+
+/* Gạch chân đỏ khi Hover/Active */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #c90000;
+  transition: width 0.3s ease;
+}
+
+/* Trạng thái đang chọn (Active) -> Màu Đỏ */
+.nav-link:hover,
+.nav-link.active {
+  color: #c90000;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}

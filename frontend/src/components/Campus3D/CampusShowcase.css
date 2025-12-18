@@ -1,0 +1,279 @@
+/* --- SECTION CHÍNH --- */
+.campus-section {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+  position: relative;
+}
+
+.campus-header {
+  font-size: 2.2rem;
+  color: #c90000;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.campus-line {
+  width: 60px;
+  height: 4px;
+  background: #c90000;
+  margin: 0 auto 40px;
+}
+
+.campus-slider-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* --- CARD TRONG SLIDER --- */
+.campus-card-padding {
+  padding: 15px;
+}
+
+.campus-card-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  border: 1px solid #eee;
+}
+
+.campus-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.campus-card-item:hover .card-thumb {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.campus-card-item:hover .card-overlay {
+  opacity: 1;
+}
+
+.btn-view-detail {
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #c90000, #ff4d4d);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(201, 0, 0, 0.3);
+}
+
+.campus-card-item:hover .btn-view-detail {
+  transform: translateY(0);
+}
+
+.card-info {
+  padding: 20px;
+  background: #fff;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* --- MODAL (POPUP) CHI TIẾT --- */
+.campus-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.campus-modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 1100px;
+  height: 80vh;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 45px; height: 45px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 20;
+  color: #333;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.btn-close-modal:hover {
+  background: #c90000;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* === CỘT TRÁI: 3D === */
+.modal-left {
+  flex: 1.2;
+  background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 100%);
+  position: relative;
+}
+
+.mouse-hint-text {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.85);
+  padding: 8px 20px;
+  border-radius: 30px;
+  pointer-events: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* Cột Phải: Thông tin */
+.modal-right {
+  flex: 0.8;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  background: #fff;
+}
+
+.modal-title {
+  font-size: 2.2rem;
+  color: #c90000;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.modal-divider {
+  width: 80px; height: 5px; background: linear-gradient(to right, #c90000, #ff4d4d); margin: 20px 0 30px 0; border-radius: 5px;
+}
+
+.modal-desc {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+/* --- BUTTON ĐẸP --- */
+.modal-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-3d-action, .btn-vr-action {
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Nút Tham quan 3D */
+.btn-3d-action {
+  background: linear-gradient(135deg, #c90000, #ff3333);
+  color: white;
+  box-shadow: 0 10px 25px rgba(201, 0, 0, 0.4);
+}
+
+.btn-3d-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(201, 0, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+/* Nút VR */
+.btn-vr-action {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
+}
+
+.btn-vr-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(44, 62, 80, 0.6);
+  filter: brightness(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .modal-body { flex-direction: column; }
+  .campus-modal-content { height: 95vh; overflow-y: auto; width: 95%; }
+  .modal-left { height: 400px; flex: none; }
+  .modal-right { flex: none; padding: 30px; }
+  .modal-title { font-size: 1.8rem; }
+}
